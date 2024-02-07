@@ -1,0 +1,14 @@
+
+<owl-carousel-o [options]="customOptions">
+
+  <ng-container *ngFor="let movie of moviearr">
+    <ng-template carouselSlide >
+        <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" class="w-100">
+        <span [ngClass]="{'text-bg-danger':movie.vote_average>8 ,'text-bg-primary':movie.vote_average<8}"
+            class="position-absolute top-0 end-0 p-2 ">{{movie.vote_average}}</span>
+        <h2> {{movie.title}}</h2>
+        
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
